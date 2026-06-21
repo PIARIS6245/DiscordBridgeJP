@@ -1,0 +1,94 @@
+# ============================================================
+# DiscordBridgeJP 設定ファイル
+# 詳細は同梱の仕様書 / README を参照してください。
+# ============================================================
+
+# ----- Discord接続(必須) -----
+# Discord Developer Portal で取得したBotトークン。絶対に公開しないこと。
+bot-token: "YOUR_BOT_TOKEN_HERE"
+# Botを動かすDiscordサーバー(ギルド)自体のID
+guild-id: "0"
+# MC<->Discordチャット中継チャンネルID
+chat-channel-id: "0"
+# コンソールログ中継 / MCコマンド実行チャンネルID
+console-channel-id: "0"
+# アカウント連携コード(!XXXXXXXX)入力用チャンネルID
+verify-channel-id: "0"
+# プレイヤーコマンドログ専用チャンネルID(vanilla OPを持たないプレイヤーのコマンドのみ送る。0で無効)
+command-log-channel-id: "0"
+
+# ----- コンソール連携 -----
+console-command:
+  # true にすると console-channel での発言をMCコマンドとして実行する(強い権限)
+  enabled: false
+  # 上記を許可するDiscordロールID
+  role-id: "0"
+# コンソールチャンネルに出すログの範囲。"ALL"=全ログ / "WARN_ERROR"=WARN・ERRORのみ
+# (Discordチャンネル内でコマンドを実行した場合、その結果はこの設定に関わらず常に表示される)
+console-log-level: "ALL"
+
+# ----- 表示 / 言語 -----
+# 表示言語。lang/ に読み込まれている言語コードを指定(ja, en など)
+language: "ja"
+
+# 通知のON/OFF・文言・Embed色・Discord->MC表示形式・添付の扱いは messages.yml に移動しました。
+
+# ----- ロール色反映(MC側) -----
+name-color:
+  # チャット欄のプレイヤー名にロール色(フルカラー)を反映 + <名前>形式にする
+  chat: true
+  # 頭上ネームタグに反映(バニラ16色へ自動近似)
+  nametag: true
+  # タブリスト(プレイヤー一覧)に反映(フルカラー)
+  tablist: true
+  # Discordロール色をREST取得してからキャッシュする秒数
+  cache-seconds: 300
+
+# ----- チャットコマンド / スティッキー -----
+chat-command:
+  enabled: true
+  prefix: "!"
+sticky-message:
+  enabled: true
+
+# ----- アカウント連携 -----
+link:
+  # 連携コードの有効期限(秒)
+  code-expiry-seconds: 600
+  # 認証チャンネルに貼られた本人のコードメッセージを処理後にBotが削除するか
+  delete-code-message: false
+  # require-link-for-new-players: true 中の unlink 動作
+  #   block = 一般プレイヤーのunlinkコマンドを拒否
+  #   kick  = unlink自体は許可し、解除後に即KICK
+  unlink-mode: "block"
+  # 複数アカウント連携: 1つのDiscord垢に複数のMinecraft垢を紐づけられるようにするか
+  multi-account:
+    enabled: false
+    # 1つのDiscord垢に紐づけられるMinecraft垢の上限(multi-account.enabled時のみ有効)
+    max-per-discord: 2
+
+# 新規プレイヤー(初参加)に連携を必須化するか
+require-link-for-new-players: false
+
+# ----- メンテナンスモード -----
+# /discordbridgejp maintenance on [理由] で即時切替・保存される
+maintenance-mode: false
+maintenance:
+  # メンテ中のバイパス権限ノード。空ならOPのみ参加可能。
+  # 例: "myserver.staff" (LuckPerms導入時のみ有効)
+  bypass-permission: ""
+  # 直近のメンテナンス理由(コマンドから自動保存される。手動編集も可)
+  reason: ""
+
+# ----- BAN同期 -----
+ban-sync:
+  mc-to-discord: true
+  discord-to-mc: true
+  unban-sync: true
+
+# ----- 互換 -----
+# discordsrv.silentjoin / silentquit 権限も discordbridgejp.* と同等に扱う
+recognize-legacy-discordsrv-permissions: true
+
+# ----- デバッグ -----
+debug: false

@@ -1,0 +1,81 @@
+# ============================================================
+# DiscordBridgeJP messages.yml
+#
+# チャット関連の表示設定をまとめるファイル。
+# ここはlang/*.yml(多言語切替)とは別で、サーバー主が自分の言語で記述する想定。
+# 例: languageをenにすると {advancement} や {deathmessage} の中身(進捗名/死亡文)は
+#     英語になるが、ここのテンプレート文(囲み等)は固定。外国語運用ならこの文面を各自書き換える。
+#
+# 使えるプレースホルダ:
+#   {playername}   プレイヤー名
+#   {advancement}  進捗名(進捗通知のみ)
+#   {deathmessage} 死亡メッセージ全文(死亡通知のみ。名前を含む)
+#
+# embed-color に使える色名:
+#   black / dark_blue / dark_green / dark_aqua / dark_red / dark_purple /
+#   gold / gray / dark_gray / blue / green / aqua / red / light_purple / yellow / white /
+#   lime / orange / pink / purple / dark_magenta
+# 色名にない色は16進(#RRGGBB)でも指定可能。例: "#7FFF00"
+# ============================================================
+
+# ----- Discord -> MC チャットの表示形式 -----
+# A: [Discord] 名前 > メッセージ                 (プレーン・色なし)
+# B: [Discord | ロール名] 名前 > メッセージ        (Discord最上位ロール名入り。ロール無しは | 部分省略)
+# C: [Discord] 名前 > メッセージ                 (名前部分だけDiscord最上位ロール色)
+discord-to-minecraft:
+  format: "C"
+
+# ----- Discordの添付ファイルをMCへ流す形式 -----
+# image: 画像添付の表示。"link"=画像URLをそのまま流す / "text"=固定文字(attachment-image-text)に置換
+# その他のファイルは常に attachment-file-text に置換される
+attachments:
+  image: "link"
+  attachment-image-text: "[添付画像]"
+  attachment-file-text: "[添付ファイル]"
+
+# ----- プレイヤー通知(アイコン付きEmbed) -----
+# enabled: 通知を出すか
+# embed:   true=Embed / false=通常テキスト
+# embed-color: Embed左の色(色名 or #RRGGBB)
+# message: 文言。空にするとデフォルト相当。絵文字を入れたい場合はここに直接書く。
+notifications:
+  join:
+    enabled: true
+    embed: true
+    embed-color: "lime"
+    message: "{playername}がサーバーに参加しました"
+  first-join:
+    enabled: true
+    embed: true
+    embed-color: "purple"
+    message: "{playername}が初めてサーバーに参加しました"
+  leave:
+    enabled: true
+    embed: true
+    embed-color: "red"
+    message: "{playername}がサーバーから退出しました"
+  advancement:
+    enabled: true
+    embed: true
+    embed-color: "gold"
+    message: "{playername}が進捗 [ {advancement} ] を達成しました"
+  death:
+    enabled: true
+    embed: true
+    embed-color: "black"
+    message: "{deathmessage}"
+
+# ----- サーバー通知(絵文字付き、アイコンなし) -----
+# message が空の場合は送信しない(無効化)。
+# message に絵文字を含めればそれが使われる。絵文字なしで書けばテキストのみになる。
+server:
+  startup:
+    enabled: true
+    embed: true
+    embed-color: "lime"
+    message: ":white_check_mark: サーバーが起動しました。"
+  shutdown:
+    enabled: true
+    embed: true
+    embed-color: "red"
+    message: ":octagonal_sign: サーバーが停止しました。"

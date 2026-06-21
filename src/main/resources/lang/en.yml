@@ -1,0 +1,67 @@
+# DiscordBridgeJP language file (English)
+mc:
+  chat:
+    discord-to-minecraft: "&b[Discord] &f%user%&7: &f%message%"
+  notify:
+    join: "&e%player% joined the server"
+    leave: "&e%player% left the server"
+    first-join: "&6&l%player% joined for the first time! &r&6Welcome!"
+    advancement: "&b%player% has made the advancement \"%advancement%\""
+    death: "&7%message%"
+  link:
+    block-title: "&c&lDiscord linking required"
+    block-instructions: "&fCopy the code below and paste it into the Discord verification channel.\n&7Expires in: %minutes% minutes"
+    code-hint: "Click to copy"
+    already-linked: "&cYou are already linked to a Discord account. Use /discordbridgejp unlink to unlink."
+    unlink-blocked: "&cUnlinking is currently disabled on this server."
+    unlink-success: "&aYour Discord account has been unlinked."
+    not-linked: "&cYou are not linked to a Discord account yet."
+    code-issued: "&aLink code issued. Paste the code below into the Discord verification channel:"
+  maintenance:
+    kick-message-default: "&cThe server is under maintenance.\n&7Please try again later."
+    kick-message-with-reason: "&cThe server is under maintenance.\n&7Reason: %reason%"
+  command:
+    no-permission: "&cYou don't have permission to use this command."
+    player-only: "&cThis command can only be used by players."
+    usage: "&7/discordbridgejp <reload|status|language|namecolor|silentlogin|maintenance|link|unlink>"
+    reload-success: "&aReloaded."
+    reload-bot-failed: "&eReloaded, but the bot failed to start. Check the console."
+    status-connected: "&aBot connected: %tag%"
+    status-disconnected: "&cBot is not connected. Check bot-token in config.yml."
+    language-changed: "&aLanguage changed to %language%."
+    language-unknown: "&cLanguage '%language%' not found. Loaded: %available%"
+    namecolor-on: "&aEnabled role color for %player%."
+    namecolor-off: "&cDisabled role color for %player%."
+    namecolor-usage: "&7/discordbridgejp namecolor <on|off> <player>"
+    silentlogin-added: "&aAdded %player% to the silent login list."
+    silentlogin-removed: "&cRemoved %player% from the silent login list."
+    silentlogin-list-header: "&7Silent login players (%count%):"
+    silentlogin-list-empty: "&7No silent login players."
+    silentlogin-usage: "&7/discordbridgejp silentlogin <add|remove|list> [player]"
+    maintenance-on: "&cMaintenance mode enabled."
+    maintenance-on-reason: "&cMaintenance mode enabled. Reason: %reason%"
+    maintenance-off: "&aMaintenance mode disabled."
+    maintenance-usage: "&7/discordbridgejp maintenance <on|off> [reason]"
+    player-not-found: "&cPlayer '%player%' not found."
+discord:
+  chat:
+    minecraft-to-discord: "**%player%**: %message%"
+  notify:
+    join: "**%player%** joined the server"
+    leave: "**%player%** left the server"
+    first-join: "**%player%** joined for the first time! Welcome!"
+    advancement: "**%player%** has made the advancement \"**%advancement%**\""
+    death: "%message%"
+  link:
+    verify-success: "Linking complete! Please reconnect to the server."
+    verify-invalid: "Code not found or expired. Reconnect to the server to get a new code."
+    verify-already-used: "That code has already been used."
+    limit-reached: "You have reached the maximum number of linkable Minecraft accounts."
+  chat-command:
+    list-header: "Online players (%count%):"
+    list-empty: "No players are online right now."
+    links-header: "Linked accounts (%count%):"
+    links-empty: "No linked accounts."
+    no-permission: "You don't have permission to use this command."
+  sticky:
+    text: "Available commands: `!list`"

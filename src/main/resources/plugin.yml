@@ -1,0 +1,32 @@
+name: DiscordBridgeJP
+version: 1.0.0
+main: jp.piaris.discordbridgejp.DiscordBridgeJP
+api-version: '1.21'
+author: PIARIS
+description: DiscordSRV相当の自作Discord連携プラグイン(JDA Bot)
+softdepend:
+  - SuperVanishJP
+  - AdvancedBan
+  - LuckPerms
+
+commands:
+  discordbridgejp:
+    description: DiscordBridgeJP管理・連携コマンド
+    usage: /discordbridgejp <reload|status|language|namecolor|silentlogin|maintenance|link|unlink>
+
+permissions:
+  discordbridgejp.admin:
+    description: 管理コマンド(reload/status/language/namecolor/silentlogin/maintenance)の実行権限
+    default: op
+  discordbridgejp.link:
+    description: /discordbridgejp link でアカウント連携コードを発行する権限
+    default: true
+  discordbridgejp.unlink:
+    description: /discordbridgejp unlink で連携を解除する権限
+    default: true
+  discordbridgejp.silentjoin:
+    description: 参加時にDiscordへの通知を抑制する(MC側には影響しない)
+    default: false
+  discordbridgejp.silentquit:
+    description: 退出時にDiscordへの通知を抑制する(MC側には影響しない)
+    default: false

@@ -1,0 +1,69 @@
+# DiscordBridgeJP 言語ファイル (日本語 / 正本)
+# mc.*    = Minecraft側表示。& で色コード指定可
+# discord.* = Discord側へ送るプレーンテキスト。Markdown(**太字**等)使用可
+mc:
+  chat:
+    discord-to-minecraft: "&b[Discord] &f%user%&7: &f%message%"
+  notify:
+    join: "&e%player% が参加しました"
+    leave: "&e%player% が退出しました"
+    first-join: "&6&l%player% が初めて参加しました！ &r&6ようこそ！"
+    advancement: "&b%player% が進捗「%advancement%」を達成しました"
+    death: "&7%message%"
+  link:
+    block-title: "&c&lDiscord連携が必要です"
+    block-instructions: "&f下記コードをコピーし、Discordの認証チャンネルにそのまま貼り付けて送信してください。\n&7有効期限: %minutes%分"
+    code-hint: "クリックでコピー"
+    already-linked: "&cあなたは既にDiscordアカウントと連携済みです。解除するには /discordbridgejp unlink を使ってください。"
+    unlink-blocked: "&c現在このサーバーでは連携の解除ができません。"
+    unlink-success: "&aDiscordアカウントとの連携を解除しました。"
+    not-linked: "&cあなたはまだDiscordアカウントと連携していません。"
+    code-issued: "&a連携コードを発行しました。下のコードをDiscordの認証チャンネルに貼り付けてください:"
+  maintenance:
+    kick-message-default: "&c現在メンテナンス中です。\n&7しばらくお待ちください。"
+    kick-message-with-reason: "&c現在メンテナンス中です。\n&7理由: %reason%"
+  command:
+    no-permission: "&cこのコマンドを実行する権限がありません。"
+    player-only: "&cこのコマンドはプレイヤーのみ実行できます。"
+    usage: "&7/discordbridgejp <reload|status|language|namecolor|silentlogin|maintenance|link|unlink>"
+    reload-success: "&a再読み込みしました。"
+    reload-bot-failed: "&e再読み込みしましたが、Bot起動に失敗しました。コンソールを確認してください。"
+    status-connected: "&aBot接続中: %tag%"
+    status-disconnected: "&cBot未接続です。config.ymlのbot-tokenを確認してください。"
+    language-changed: "&a言語を %language% に変更しました。"
+    language-unknown: "&c言語 '%language%' は見つかりません。読み込み済み: %available%"
+    namecolor-on: "&a%player% のロール色反映を有効にしました。"
+    namecolor-off: "&c%player% のロール色反映を無効にしました。"
+    namecolor-usage: "&7/discordbridgejp namecolor <on|off> <player>"
+    silentlogin-added: "&a%player% を入退室サイレント対象に追加しました。"
+    silentlogin-removed: "&c%player% をサイレント対象から外しました。"
+    silentlogin-list-header: "&7入退室サイレント対象(%count%人):"
+    silentlogin-list-empty: "&7入退室サイレント対象はいません。"
+    silentlogin-usage: "&7/discordbridgejp silentlogin <add|remove|list> [player]"
+    maintenance-on: "&cメンテナンスモードを有効にしました。"
+    maintenance-on-reason: "&cメンテナンスモードを有効にしました。理由: %reason%"
+    maintenance-off: "&aメンテナンスモードを解除しました。"
+    maintenance-usage: "&7/discordbridgejp maintenance <on|off> [理由]"
+    player-not-found: "&cプレイヤー '%player%' が見つかりません。"
+discord:
+  chat:
+    minecraft-to-discord: "**%player%**: %message%"
+  notify:
+    join: "**%player%** が参加しました"
+    leave: "**%player%** が退出しました"
+    first-join: "**%player%** が初めて参加しました！ ようこそ！"
+    advancement: "**%player%** が進捗「**%advancement%**」を達成しました"
+    death: "%message%"
+  link:
+    verify-success: "連携が完了しました！サーバーに再接続してください。"
+    verify-invalid: "コードが見つからない、または期限切れです。サーバーに再接続して新しいコードを取得してください。"
+    verify-already-used: "そのコードは既に使用されています。"
+    limit-reached: "連携できるMinecraft垢の上限に達しています。"
+  chat-command:
+    list-header: "オンラインプレイヤー(%count%人):"
+    list-empty: "現在オンラインのプレイヤーはいません。"
+    links-header: "連携済みアカウント(%count%件):"
+    links-empty: "連携済みのアカウントはありません。"
+    no-permission: "このコマンドを実行する権限がありません。"
+  sticky:
+    text: "利用可能コマンド: `!list`"
